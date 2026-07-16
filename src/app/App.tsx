@@ -10,9 +10,11 @@ import { IntroNameContent } from './components/IntroNameContent';
 import { IntroCatnameContent } from './components/IntroCatnameContent';
 import { IntroNoticeContent } from './components/IntroNoticeContent';
 import { SubscribeContent } from './components/SubscribeContent';
+import { LoginContent } from './components/LoginContent';
+import { MembershipContent } from './components/MembershipContent';
 
 export type DiaryEntry = {
-  date: string; // "2026-04-20" 형식
+  date: string; // "2026-07-16" 형식
   emoji: number | null;
   diary: string;
   memos: string[];
@@ -20,11 +22,12 @@ export type DiaryEntry = {
 };
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('intro-name');
+  const [currentView, setCurrentView] = useState('login');
   const [diaryEntries, setDiaryEntries] = useState<{ [key: string]: DiaryEntry }>({});
   const [userName, setUserName] = useState('');
   const [catName, setCatName] = useState('');
-  const [memoCount, setMemoCount] = useState(0);
+  const [userEmail, setUserEmail] = useState(() => localStorage.getItem('userEmail') || '');
+  const memoCount = Object.values(diaryEntries).filter((entry) => entry.emoji !== null).length;
 
   const handleBack = () => {
     setCurrentView('main');
@@ -50,7 +53,16 @@ export default function App() {
 
   return (
     <div className="size-full flex items-center justify-center bg-[#e5e5e5]">
-      <div className="w-[390px] h-[844px] overflow-hidden relative">
+      <div className="w-[390px] overflow-hidden relative" style={{ height: 'min(844px, 100vh)' }}>
+        {currentView === 'login' && (
+          <LoginContent
+            onLogin={(email) => {
+              setUserEmail(email);
+              setCurrentView('intro-name');
+            }}
+            onSignUp={() => setCurrentView('intro-name')}
+          />
+        )}
         {currentView === 'intro-name' && (
           <IntroNameContent onComplete={(name) => {
             setUserName(name);
@@ -85,7 +97,8 @@ export default function App() {
           />
         )}
         {currentView === 'farm' && (
-          <FarmContent 
+          <FarmContent
+            memoCount={memoCount}
             onBack={handleBack} 
             onCalendarClick={() => setCurrentView('calendar')}
             onWriteClick={() => setCurrentView('write')}
@@ -112,22 +125,30 @@ export default function App() {
             <WriteContent
               onBack={handleBack}
               onFarmClick={() => setCurrentView('farm')}
+              userName={userName}
               diaryEntries={diaryEntries}
               onUpdateEntry={updateDiaryEntry}
-              onMemoAdd={() => setMemoCount(prev => prev + 1)}
             />
           </div>
         )}
         {currentView === 'profile' && (
-          <ProfileContent 
-            onBack={handleBack} 
+          <ProfileContent
+            onBack={handleBack}
             onFarmClick={() => setCurrentView('farm')}
             onCalendarClick={() => setCurrentView('calendar')}
             onWriteClick={() => setCurrentView('write')}
             onHomeClick={() => setCurrentView('main')}
+            onMembershipClick={() => setCurrentView('membership')}
+            userEmail={userEmail}
           />
         )}
-        {currentView !== 'splash' && currentView !== 'intro-name' && currentView !== 'intro-catname' && currentView !== 'intro-notice' && currentView !== 'subscribe' && currentView !== 'farm' && (
+        {currentView === 'membership' && (
+          <MembershipContent
+            onBack={() => setCurrentView('profile')}
+            onSubscribe={() => setCurrentView('subscribe')}
+          />
+        )}
+        {currentView !== 'login' && currentView !== 'splash' && currentView !== 'intro-name' && currentView !== 'intro-catname' && currentView !== 'intro-notice' && currentView !== 'subscribe' && currentView !== 'farm' && (
           <BottomNav currentView={currentView} onNavigate={setCurrentView} />
         )}
       </div>

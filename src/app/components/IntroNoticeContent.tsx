@@ -175,7 +175,7 @@ export function IntroNoticeContent({ onComplete }: IntroNoticeContentProps) {
                   </p>
                 </div>
               </div>
-              <div className="bg-white relative rounded-[16px] shrink-0 w-full h-[160px]" data-name="input_wrap">
+              <div className="bg-white relative rounded-[4px] shrink-0 w-full h-[160px] border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="input_wrap">
                 <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
                   <div className="content-stretch flex gap-[20px] items-center justify-center px-[20px] py-[10px] relative size-full">
                     <div className="content-stretch flex h-[22px] items-center relative shrink-0 w-[20px]" data-name="Component 8">
@@ -211,12 +211,14 @@ export function IntroNoticeContent({ onComplete }: IntroNoticeContentProps) {
                     </div>
                   </div>
                 </div>
-                <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px]" />
               </div>
             </div>
-            <button onClick={onComplete} className="bg-[#f65f1e] content-stretch flex flex-col h-[42px] items-center justify-center px-[20px] py-[10px] relative rounded-[16px] shrink-0 w-[100px]" data-name="button">
-              <div aria-hidden="true" className="absolute border border-black border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
-              <p className="font-['Pretendard',sans-serif] font-normal leading-none relative shrink-0 text-[18px] text-white whitespace-nowrap">완료</p>
+            <button
+              onClick={onComplete}
+              className="bg-[#E9642C] content-stretch flex flex-col h-[42px] items-center justify-center px-[20px] py-[10px] relative rounded-full shrink-0 w-[100px] border-[2.5px] border-[#B14A1E] shadow-[4px_4px_0px_0px_#B14A1E] active:shadow-[2px_2px_0px_0px_#B14A1E] active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
+              data-name="button"
+            >
+              <p className="font-['Pretendard',sans-serif] font-bold leading-none relative shrink-0 text-[18px] text-[#FFF7EE] whitespace-nowrap">완료</p>
             </button>
           </div>
         </div>

@@ -51,8 +51,7 @@ export function IntroCatnameContent({ onComplete, userName }: IntroCatnameConten
                   </p>
                 </div>
               </div>
-              <div className="bg-white h-[60px] relative rounded-[16px] shrink-0 w-full" data-name="input_wrap">
-                <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px]" />
+              <div className="bg-white h-[60px] relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="input_wrap">
                 <div className="flex flex-col items-center justify-center size-full">
                   <div className="content-stretch flex flex-col items-center justify-center px-[20px] py-[8px] relative size-full">
                     <input
@@ -67,9 +66,12 @@ export function IntroCatnameContent({ onComplete, userName }: IntroCatnameConten
                 </div>
               </div>
             </div>
-            <button onClick={handleSubmit} className="bg-[#f65f1e] content-stretch flex flex-col h-[42px] items-center justify-center px-[20px] py-[10px] relative rounded-[16px] shrink-0 w-[100px]" data-name="button">
-              <div aria-hidden="true" className="absolute border border-black border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
-              <p className="font-['Noto_Sans_KR:Regular',sans-serif] font-normal leading-none relative shrink-0 text-[18px] text-white whitespace-nowrap">완료</p>
+            <button
+              onClick={handleSubmit}
+              className="bg-[#E9642C] content-stretch flex flex-col h-[42px] items-center justify-center px-[20px] py-[10px] relative rounded-full shrink-0 w-[100px] border-[2.5px] border-[#B14A1E] shadow-[4px_4px_0px_0px_#B14A1E] active:shadow-[2px_2px_0px_0px_#B14A1E] active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
+              data-name="button"
+            >
+              <p className="font-['Noto_Sans_KR:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[18px] text-[#FFF7EE] whitespace-nowrap">완료</p>
             </button>
           </div>
         </div>

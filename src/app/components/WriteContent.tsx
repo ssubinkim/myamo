@@ -15,9 +15,10 @@ import type { DiaryEntry } from '../App';
 interface WriteContentProps {
   onBack: () => void;
   onFarmClick: () => void;
+  userName: string;
   diaryEntries: { [key: string]: DiaryEntry };
   onUpdateEntry: (date: string, entry: Partial<DiaryEntry>) => void;
-  onMemoAdd: () => void;
+  onMemoAdd?: () => void;
 }
 
 function Fix() {
@@ -54,22 +55,22 @@ function Button({ onBack }: { onBack: () => void }) {
   );
 }
 
-function Tit() {
+function Tit({ userName }: { userName: string }) {
   return (
     <div className="content-stretch flex flex-[1_0_0] items-center justify-center min-w-px relative" data-name="tit">
       <div className="flex flex-[1_0_0] flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] min-w-px not-italic relative text-[#1e293b] text-[22px] tracking-[0.3px] whitespace-pre-wrap">
         <p className="font-['Pretendard:SemiBold',sans-serif] leading-[1.2] mb-[4px]">{`Good Morning, `}</p>
-        <p className="font-['Pretendard:SemiBold',sans-serif] leading-[1.2]">수빈</p>
+        <p className="font-['Pretendard:SemiBold',sans-serif] leading-[1.2]">{userName || '사용자'}</p>
       </div>
     </div>
   );
 }
 
-function Top({ onFarmClick }: { onFarmClick: () => void }) {
+function Top({ onFarmClick, userName }: { onFarmClick: () => void; userName: string }) {
   return (
     <div className="relative shrink-0 w-full" data-name="top">
       <div className="content-stretch flex items-start justify-between pl-[10px] relative size-full">
-        <Tit />
+        <Tit userName={userName} />
         <button onClick={onFarmClick} className="content-stretch flex items-center relative self-stretch shrink-0 w-[69px]" data-name="orange_box">
           <div className="flex-[1_0_0] h-full min-w-px relative" data-name="Gemini_Generated_Image_8glnmc8glnmc8gln-Photoroom 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -95,7 +96,7 @@ function DayItem({ day, dayName, isSelected, onClick, itemRef }: { day: number; 
           <div className={`flex ${isSelected ? 'flex-[1_0_0]' : ''} flex-col font-['Pretendard:SemiBold',sans-serif] ${isSelected ? 'min-h-px' : 'h-[24px]'} justify-center relative shrink-0 text-[18px] w-full`}>
             <p className="leading-[26px]">{day}</p>
           </div>
-          <div className={`flex ${isSelected ? 'flex-[1_0_0] font-[\'Pretendard:Medium\',sans-serif] min-h-px' : 'font-[\'Pretendard:ExtraLight\',sans-serif]'} flex-col justify-center relative ${isSelected ? '' : 'shrink-0'} text-[14px] w-full`}>
+          <div className={`flex ${isSelected ? "flex-[1_0_0] font-['Pretendard:Medium',sans-serif] min-h-px" : "font-['Pretendard:ExtraLight',sans-serif]"} flex-col justify-center relative ${isSelected ? '' : 'shrink-0'} text-[14px] w-full`}>
             <p className="leading-[26px]">{dayName}</p>
           </div>
         </div>
@@ -108,13 +109,13 @@ function Ul({ selectedDay, onDaySelect }: { selectedDay: number; onDaySelect: (d
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const dayRefs = useRef<{ [key: number]: React.RefObject<HTMLButtonElement> }>({});
 
-  // 더 많은 날짜 생성 (14일부터 30일까지)
-  const days = Array.from({ length: 17 }, (_, i) => {
+  // 2026년 7월 14일부터 31일까지
+  const days = Array.from({ length: 18 }, (_, i) => {
     const day = 14 + i;
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     return {
       day,
-      name: dayNames[day % 7]
+      name: dayNames[(day + 2) % 7]
     };
   });
 
@@ -173,10 +174,10 @@ function Ul({ selectedDay, onDaySelect }: { selectedDay: number; onDaySelect: (d
   );
 }
 
-function MemoHeader({ selectedDay, onDaySelect, onFarmClick }: { selectedDay: number; onDaySelect: (day: number) => void; onFarmClick: () => void }) {
+function MemoHeader({ selectedDay, onDaySelect, onFarmClick, userName }: { selectedDay: number; onDaySelect: (day: number) => void; onFarmClick: () => void; userName: string }) {
   return (
     <div className="content-stretch flex flex-col gap-[22px] items-center justify-center pb-[20px] relative rounded-[16px] shrink-0 w-full" data-name="memo_header">
-      <Top onFarmClick={onFarmClick} />
+      <Top onFarmClick={onFarmClick} userName={userName} />
       <Ul selectedDay={selectedDay} onDaySelect={onDaySelect} />
     </div>
   );
@@ -227,8 +228,7 @@ function EmojiBox({ selectedEmoji, onEmojiClick }: { selectedEmoji: number | nul
   ];
 
   return (
-    <div className="bg-white content-stretch flex h-[70px] items-center justify-between px-[14px] py-[10px] relative rounded-[16px] shrink-0 w-[342px]" data-name="emoji_box">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white content-stretch flex h-[70px] items-center justify-between px-[14px] py-[10px] relative rounded-[4px] shrink-0 w-[342px] border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="emoji_box">
       {emojis.map((emoji) => (
         <button
           key={emoji.id}
@@ -296,8 +296,7 @@ function P1({ onSave }: { onSave: () => void }) {
 
 function P2({ diaryText, onDiaryChange }: { diaryText: string; onDiaryChange: (text: string) => void }) {
   return (
-    <div className="bg-white min-h-[200px] relative rounded-[14px] shrink-0 w-full" data-name="p">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[14.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white min-h-[200px] relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="p">
       <div className="flex flex-row items-start size-full">
         <div className="content-stretch flex items-start justify-center p-[20px] relative size-full">
           <textarea
@@ -424,8 +423,7 @@ function MemoItem({ value, onChange }: { value: string; onChange: (text: string)
 
 function MemoContainer({ memos, onMemoChange }: { memos: string[]; onMemoChange: (index: number, text: string) => void }) {
   return (
-    <div className="bg-white relative rounded-[14px] shrink-0 w-full" data-name="txt">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[14.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="txt">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col gap-[10px] items-center justify-center px-[30px] py-[24px] relative size-full">
           {memos.map((memo, index) => (
@@ -493,7 +491,8 @@ function Container({
   memos,
   onMemoChange,
   onAddMemo,
-  onFarmClick
+  onFarmClick,
+  userName
 }: {
   selectedDay: number;
   onDaySelect: (day: number) => void;
@@ -505,11 +504,12 @@ function Container({
   onMemoChange: (index: number, text: string) => void;
   onAddMemo: () => void;
   onFarmClick: () => void;
+  userName: string;
 }) {
   return (
     <div className="flex-1 flex flex-col relative w-full overflow-hidden" data-name="container">
       <div className="content-stretch flex flex-col gap-[10px] items-start px-[24px] pt-[10px] relative shrink-0 w-full">
-        <MemoHeader selectedDay={selectedDay} onDaySelect={onDaySelect} onFarmClick={onFarmClick} />
+        <MemoHeader selectedDay={selectedDay} onDaySelect={onDaySelect} onFarmClick={onFarmClick} userName={userName} />
       </div>
       <div className="flex-1 overflow-y-auto px-[24px] pb-[10px] scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         <MemoContents
@@ -526,10 +526,10 @@ function Container({
   );
 }
 
-export function WriteContent({ onBack, onFarmClick, diaryEntries, onUpdateEntry, onMemoAdd }: WriteContentProps) {
-  const [selectedDay, setSelectedDay] = useState(20);
+export function WriteContent({ onBack, onFarmClick, userName, diaryEntries, onUpdateEntry, onMemoAdd }: WriteContentProps) {
+  const [selectedDay, setSelectedDay] = useState(16);
 
-  const currentDate = `2026-04-${selectedDay.toString().padStart(2, '0')}`;
+  const currentDate = `2026-07-${selectedDay.toString().padStart(2, '0')}`;
   const currentEntry = diaryEntries[currentDate];
 
   const [selectedEmoji, setSelectedEmoji] = useState<number | null>(currentEntry?.emoji ?? null);
@@ -537,7 +537,7 @@ export function WriteContent({ onBack, onFarmClick, diaryEntries, onUpdateEntry,
   const [memos, setMemos] = useState<string[]>(currentEntry?.memos ?? ['']);
 
   useEffect(() => {
-    const newDate = `2026-04-${selectedDay.toString().padStart(2, '0')}`;
+    const newDate = `2026-07-${selectedDay.toString().padStart(2, '0')}`;
     const entry = diaryEntries[newDate];
     setSelectedEmoji(entry?.emoji ?? null);
     setDiaryText(entry?.diary ?? '');
@@ -592,6 +592,7 @@ export function WriteContent({ onBack, onFarmClick, diaryEntries, onUpdateEntry,
         onMemoChange={handleMemoChange}
         onAddMemo={handleAddMemo}
         onFarmClick={onFarmClick}
+        userName={userName}
       />
       <div className="h-[90px]" />
     </div>

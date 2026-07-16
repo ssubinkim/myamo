@@ -93,7 +93,7 @@ function P() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0 w-full" data-name="p">
       <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[22px] tracking-[0.3px] whitespace-nowrap">
-        <p className="leading-[1.2]">April</p>
+        <p className="leading-[1.2]">July</p>
       </div>
     </div>
   );
@@ -251,7 +251,7 @@ function P2({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-4 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-1 shrink-0 w-[34px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -264,7 +264,7 @@ function P3({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-6 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -277,7 +277,7 @@ function P4({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-7 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-1 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -290,7 +290,7 @@ function P5({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-7 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -303,7 +303,7 @@ function P6({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-6 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-1 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -316,7 +316,7 @@ function P7({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-5 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -329,7 +329,7 @@ function P8({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-4 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[34px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -342,7 +342,7 @@ function P9({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasEn
     <button onClick={() => setSelectedDay(day)} className="col-3 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -355,7 +355,7 @@ function P10({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-2 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -368,7 +368,7 @@ function P11({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-1 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-2 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -381,7 +381,7 @@ function P12({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-1 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -394,7 +394,7 @@ function P13({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-2 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -407,7 +407,7 @@ function P14({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-3 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -420,7 +420,7 @@ function P15({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-4 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[34px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -433,7 +433,7 @@ function P16({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-5 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -446,7 +446,7 @@ function P17({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-6 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -459,7 +459,7 @@ function P18({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-7 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-3 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -472,7 +472,7 @@ function P19({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-7 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -485,7 +485,7 @@ function P20({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-6 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -498,7 +498,7 @@ function P21({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-5 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -511,7 +511,7 @@ function P22({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-4 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[34px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -524,7 +524,7 @@ function P23({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-3 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -537,7 +537,7 @@ function P24({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-2 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -550,7 +550,7 @@ function P25({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-1 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-4 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -563,7 +563,7 @@ function P26({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-1 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-5 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -576,7 +576,7 @@ function P27({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-2 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-5 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -589,7 +589,7 @@ function P28({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-3 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-5 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -602,7 +602,7 @@ function P29({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-4 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-5 shrink-0 w-[34px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -615,7 +615,7 @@ function P30({ day, hasEntry, selectedDay, setSelectedDay }: { day: number; hasE
     <button onClick={() => setSelectedDay(day)} className="col-5 content-stretch flex flex-col h-[42px] items-center justify-center pb-[10px] relative row-5 shrink-0 w-[38px] cursor-pointer" data-name="p">
       <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
       {hasEntry && (
-        <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+        <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
           <img alt="" className="size-full object-contain" src={imgOrange11} />
         </div>
       )}
@@ -630,7 +630,7 @@ function P31({ day, hasEntry }: { day: number; hasEntry: boolean }) {
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center justify-center pb-[10px] relative size-full">
           <p className="font-['Pretendard:Medium',sans-serif] leading-none not-italic relative shrink-0 text-[#0a0a0a] text-[14px] text-center whitespace-nowrap">{day}</p>
           {hasEntry && (
-            <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 size-[32px]">
+            <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 size-[64px]">
               <img alt="" className="size-full object-contain" src={imgOrange11} />
             </div>
           )}
@@ -654,9 +654,13 @@ function Container3({ diaryEntries, selectedDay, setSelectedDay }: {
   setSelectedDay: (day: number) => void;
 }) {
   const hasEntry = (day: number) => {
-    const dateKey = `2026-04-${day.toString().padStart(2, '0')}`;
+    const dateKey = `2026-07-${day.toString().padStart(2, '0')}`;
     const entry = diaryEntries[dateKey];
-    return entry && (entry.diary.trim() !== '' || entry.memos.some(m => m.trim() !== ''));
+    return Boolean(entry && (
+      entry.emoji !== null ||
+      entry.diary.trim() !== '' ||
+      entry.memos.some((memo) => memo.trim() !== '')
+    ));
   };
 
   return (
@@ -715,14 +719,14 @@ function Cal({ diaryEntries, selectedDay, setSelectedDay }: {
 
 function P33({ selectedDay }: { selectedDay: number }) {
   const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
-  // Calculate day of week for April 2026 (month 3, 0-indexed)
-  const dateObj = new Date(2026, 3, selectedDay);
+  // Calculate day of week for July 2026 (month 6, 0-indexed)
+  const dateObj = new Date(2026, 6, selectedDay);
   const dayIndex = dateObj.getDay();
   const dayOfWeek = days[dayIndex];
 
   return (
     <div className="content-stretch flex font-['Pretendard:Medium',sans-serif] gap-[6px] items-start leading-none not-italic relative shrink-0 text-[#222b45] text-[16px] whitespace-nowrap" data-name="p">
-      <p className="relative shrink-0">4월</p>
+      <p className="relative shrink-0">7월</p>
       <p className="relative shrink-0">{selectedDay}일</p>
       <p className="relative shrink-0">{dayOfWeek}</p>
     </div>
@@ -840,8 +844,7 @@ function Li7({ currentEntry }: { currentEntry: DiaryEntry | undefined }) {
   const hasEmoji = currentEntry?.emoji !== null && currentEntry?.emoji !== undefined;
 
   return (
-    <div className="bg-white h-[198px] relative rounded-[14px] shrink-0 w-full" data-name="li">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[14.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white h-[198px] relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="li">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[15px] items-center px-[20px] py-[16px] relative size-full">
           <div className="h-full relative shrink-0" data-name="emoji">
@@ -917,8 +920,7 @@ function Contents({ memos }: { memos: string[] }) {
 
 function Li8({ currentEntry }: { currentEntry: DiaryEntry | undefined }) {
   return (
-    <div className="bg-white relative rounded-[14px] shrink-0 w-full" data-name="li">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[14.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="li">
       <div className="content-stretch flex flex-col items-start pb-[30px] pt-[24px] px-[20px] relative size-full">
         <Contents memos={currentEntry?.memos || []} />
       </div>
@@ -941,7 +943,11 @@ function Container4({ currentEntry, currentDateDisplay, selectedDay, onToggleBoo
   selectedDay: number;
   onToggleBookmark: (date: string) => void;
 }) {
-  const hasEntry = currentEntry && (currentEntry.diary.trim() !== '' || currentEntry.memos.some(m => m.trim() !== ''));
+  const hasEntry = currentEntry && (
+    currentEntry.emoji !== null ||
+    currentEntry.diary.trim() !== '' ||
+    currentEntry.memos.some((memo) => memo.trim() !== '')
+  );
   const isBookmarked = currentEntry?.bookmarked || false;
 
   return (
@@ -988,8 +994,8 @@ function Container({ diaryEntries, selectedDay, setSelectedDay, currentEntry, cu
 }
 
 export function CalendarContent({ onBack, onFarmClick, diaryEntries, onToggleBookmark }: CalendarContentProps) {
-  const [selectedDay, setSelectedDay] = useState(20);
-  const currentDateDisplay = `2026-04-${selectedDay.toString().padStart(2, '0')}`;
+  const [selectedDay, setSelectedDay] = useState(16);
+  const currentDateDisplay = `2026-07-${selectedDay.toString().padStart(2, '0')}`;
   const currentEntry = diaryEntries[currentDateDisplay];
 
   return (

@@ -3,9 +3,26 @@
     "allow": [
       "Bash(python3 -c ' *)",
       "Bash(node -e ' *)",
+      "Bash(curl -s -H \"X-Figma-Token: figd__xR1BFhwmWuATZTJP8JeDUYTtFTcq0SAwwk3_jWN\" \"https://api.figma.com/v1/files/KusQfhLVq0ntaRuCFTsagZ/nodes?ids=310-3325\" -o \"C:/김수빈/MyaMo/figma_node.json\")",
+      "Bash(npx tsc *)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(npm run *)",
+      "Bash(xargs grep *)",
+      "Bash(xargs cat *)",
+      "Bash(npx vite *)",
+      "Bash(node *)",
+      "Bash(git restore *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(./node_modules/.bin/tsc *)",
+      "Bash(pnpm run *)",
       "Bash(npm install *)",
-      "Bash(git rm *)",
-      "Bash(git add *)"
+      "Bash(git pull *)",
+      "Bash(git fetch *)",
+      "Bash(git stash *)",
+      "Bash(git reset *)",
+      "Bash(git rm *)"
     ]
   }
 }

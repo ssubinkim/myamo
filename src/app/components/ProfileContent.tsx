@@ -20,11 +20,13 @@ import imgHome1 from "../../imports/Profile-1/be7abaa5618478279c2675e88d6e9acf59
 import imgDairy1 from "../../imports/Profile-1/ccab501880a2fee15f9025884b3fd44918cc3d9b.png";
 
 interface ProfileContentProps {
+  userEmail: string;
   onBack: () => void;
   onFarmClick: () => void;
   onCalendarClick: () => void;
   onWriteClick: () => void;
   onHomeClick: () => void;
+  onMembershipClick: () => void;
 }
 
 function Fix() {
@@ -92,11 +94,10 @@ function Me() {
 
 function Img() {
   return (
-    <div className="bg-white relative rounded-[100px] shrink-0 size-[120px]" data-name="img">
+    <div className="bg-white relative rounded-[4px] shrink-0 size-[120px] border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="img">
       <div className="content-stretch flex items-center justify-center overflow-clip relative rounded-[inherit] size-full">
         <Me />
       </div>
-      <div aria-hidden="true" className="absolute border-[#1e293b] border-[0.8px] border-solid inset-[-0.4px] pointer-events-none rounded-[100.4px]" />
     </div>
   );
 }
@@ -111,10 +112,10 @@ function Myname({ userName }: { userName: string }) {
   );
 }
 
-function Txt() {
+function Txt({ userEmail }: { userEmail: string }) {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="txt">
-      <p className="font-['Pretendard:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#6a7282] text-[14px] text-center whitespace-nowrap">ID : suvin@ezen.com</p>
+      <p className="font-['Pretendard:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#6a7282] text-[14px] text-center whitespace-nowrap">ID : {userEmail || 'ID 미설정'}</p>
     </div>
   );
 }
@@ -146,17 +147,17 @@ function Txt1({ catName }: { catName: string }) {
   );
 }
 
-function TextBox({ userName, catName }: { userName: string; catName: string }) {
+function TextBox({ userName, catName, userEmail }: { userName: string; catName: string; userEmail: string }) {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-name="text_box">
       <Myname userName={userName} />
-      <Txt />
+      <Txt userEmail={userEmail} />
       <Txt1 catName={catName} />
     </div>
   );
 }
 
-function Profile1({ onFarmClick, userName, catName }: { onFarmClick: () => void; userName: string; catName: string }) {
+function Profile1({ onFarmClick, userName, catName, userEmail }: { onFarmClick: () => void; userName: string; catName: string; userEmail: string }) {
   return (
     <div className="content-stretch flex flex-[1_0_0] gap-[24px] items-center min-w-px relative" data-name="profile">
       <button onClick={onFarmClick} className="content-stretch flex h-[52px] items-center relative shrink-0 w-[76px]" data-name="orange_box">
@@ -166,18 +167,17 @@ function Profile1({ onFarmClick, userName, catName }: { onFarmClick: () => void;
           </div>
         </div>
       </button>
-      <TextBox userName={userName} catName={catName} />
+      <TextBox userName={userName} catName={catName} userEmail={userEmail} />
     </div>
   );
 }
 
-function Container1({ onFarmClick, userName, catName }: { onFarmClick: () => void; userName: string; catName: string }) {
+function Container1({ onFarmClick, userName, catName, userEmail }: { onFarmClick: () => void; userName: string; catName: string; userEmail: string }) {
   return (
-    <div className="bg-white relative rounded-[14px] shrink-0 w-full" data-name="container">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[14.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="container">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[20px] py-[14px] relative size-full">
-          <Profile1 onFarmClick={onFarmClick} userName={userName} catName={catName} />
+          <Profile1 onFarmClick={onFarmClick} userName={userName} catName={catName} userEmail={userEmail} />
         </div>
       </div>
     </div>
@@ -211,13 +211,13 @@ function Txt2() {
   );
 }
 
-function Li() {
+function Li({ onClick }: { onClick: () => void }) {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-center justify-center min-w-px relative" data-name="li">
+    <button onClick={onClick} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-center justify-center min-w-px relative" data-name="li">
       <div aria-hidden="true" className="absolute border-[rgba(106,114,130,0.8)] border-r border-solid inset-0 pointer-events-none" />
       <Name />
       <Txt2 />
-    </div>
+    </button>
   );
 }
 
@@ -248,7 +248,7 @@ function Txt3() {
 
 function Li1() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-center justify-center min-w-px relative" data-name="li">
+    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-center justify-center min-w-px relative opacity-40 pointer-events-none" data-name="li">
       <Name1 />
       <Txt3 />
     </div>
@@ -282,7 +282,7 @@ function Txt4() {
 
 function Li2() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] h-[44px] items-center justify-center min-w-px relative" data-name="li">
+    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] h-[44px] items-center justify-center min-w-px relative opacity-40 pointer-events-none" data-name="li">
       <div aria-hidden="true" className="absolute border-[rgba(106,114,130,0.8)] border-l border-solid inset-0 pointer-events-none" />
       <Name2 />
       <Txt4 />
@@ -290,13 +290,12 @@ function Li2() {
   );
 }
 
-function Ul() {
+function Ul({ onMembershipClick }: { onMembershipClick: () => void }) {
   return (
-    <div className="bg-white relative rounded-[14px] shrink-0 w-full" data-name="ul">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[14.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="ul">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex gap-[10px] items-center justify-center px-[10px] py-[14px] relative size-full">
-          <Li />
+          <Li onClick={onMembershipClick} />
           <Li1 />
           <Li2 />
         </div>
@@ -450,8 +449,7 @@ function Container5() {
 
 function Container2() {
   return (
-    <div className="bg-white relative rounded-bl-[22px] rounded-br-[22px] rounded-tl-[16px] rounded-tr-[16px] shrink-0 w-full" data-name="container">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-bl-[22.5px] rounded-br-[22.5px] rounded-tl-[16.5px] rounded-tr-[16.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <div className="bg-white relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="container">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col gap-[20px] items-center justify-center pb-[12px] pt-[20px] px-[10px] relative size-full">
           <Container3 />
@@ -463,7 +461,7 @@ function Container2() {
   );
 }
 
-function Container({ onFarmClick, userName, catName }: { onFarmClick: () => void; userName: string; catName: string }) {
+function Container({ onFarmClick, userName, catName, userEmail, onMembershipClick }: { onFarmClick: () => void; userName: string; catName: string; userEmail: string; onMembershipClick: () => void }) {
   return (
     <div className="flex-1 overflow-y-auto scrollbar-hide relative w-full" data-name="container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -474,8 +472,8 @@ function Container({ onFarmClick, userName, catName }: { onFarmClick: () => void
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[16px] items-center pb-[22px] px-[24px] relative size-full">
           <Img />
-          <Container1 onFarmClick={onFarmClick} userName={userName} catName={catName} />
-          <Ul />
+          <Container1 onFarmClick={onFarmClick} userName={userName} catName={catName} userEmail={userEmail} />
+          <Ul onMembershipClick={onMembershipClick} />
           <Container2 />
           <div className="absolute content-stretch flex h-[67px] items-center left-[209px] top-[79px] w-[64px]" data-name="cheesecat/ch1">
             <div className="flex-[1_0_0] h-full min-w-px relative" data-name="cat1-Photoroom 2">
@@ -512,7 +510,7 @@ function Ul1({ onCalendarClick, onWriteClick, onHomeClick }: { onCalendarClick: 
           </div>
         </div>
       </button>
-      <div className="content-stretch flex flex-col items-start relative shrink-0 size-[50px]" data-name="Component 12">
+      <div className="content-stretch flex flex-col items-start relative shrink-0 size-[50px] opacity-40 pointer-events-none" data-name="Component 12">
         <div className="flex-[1_0_0] min-h-px relative w-full" data-name="shop">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img alt="" className="absolute h-[196.92%] left-[-77.67%] max-w-none top-[-41.73%] w-[256%]" src={imgShop} />
@@ -530,14 +528,14 @@ function Ul1({ onCalendarClick, onWriteClick, onHomeClick }: { onCalendarClick: 
   );
 }
 
-export function ProfileContent({ onBack, onFarmClick, onCalendarClick, onWriteClick, onHomeClick }: ProfileContentProps) {
+export function ProfileContent({ onBack, onFarmClick, onCalendarClick, onWriteClick, onHomeClick, onMembershipClick, userEmail }: ProfileContentProps) {
   const [userName, setUserName] = useState('사용자');
   const [catName, setCatName] = useState('고양이');
 
   useEffect(() => {
     const storedUserName = localStorage.getItem('userName');
     const storedCatName = localStorage.getItem('catName');
-    
+
     if (storedUserName) {
       setUserName(storedUserName);
     }
@@ -550,7 +548,7 @@ export function ProfileContent({ onBack, onFarmClick, onCalendarClick, onWriteCl
     <div className="bg-[#fff9ed] content-stretch flex flex-col gap-[8px] items-start relative rounded-[49px] size-full" data-name="profile">
       <FixBar />
       <TopbtnBox onBack={onBack} />
-      <Container onFarmClick={onFarmClick} userName={userName} catName={catName} />
+      <Container onFarmClick={onFarmClick} userName={userName} catName={catName} userEmail={userEmail} onMembershipClick={onMembershipClick} />
       <div className="shrink-0 w-full">
         <Ul1 onCalendarClick={onCalendarClick} onWriteClick={onWriteClick} onHomeClick={onHomeClick} />
       </div>

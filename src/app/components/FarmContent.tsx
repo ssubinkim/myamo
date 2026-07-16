@@ -10,11 +10,29 @@ import imgDairy1 from "../../imports/Farm-2/ccab501880a2fee15f9025884b3fd44918cc
 import imgOrange11 from "../../imports/Farm-2/f09c5af308b73c48641aee180262f44f925f694c.png";
 
 interface FarmContentProps {
+  memoCount: number;
   onBack: () => void;
   onCalendarClick: () => void;
   onWriteClick: () => void;
   onHomeClick: () => void;
   onProfileClick: () => void;
+}
+
+const ORANGE_POSITIONS = [
+  [131, 320], [218, 306], [176, 270], [92, 284], [264, 348],
+  [145, 235], [224, 228], [62, 337], [300, 292], [188, 365],
+  [108, 382], [245, 390], [76, 244], [279, 236], [160, 410],
+  [207, 184], [122, 190], [252, 433], [92, 425], [294, 405],
+] as const;
+
+function FarmOrange({ left, top }: { left: number; top: number }) {
+  return (
+    <div className="absolute h-[27px] w-[29px]" style={{ left, top }} data-name="oranges">
+      <div className="relative size-full overflow-visible">
+        <img alt="" className="absolute h-[108px] w-[116px] left-[-40px] top-[-41px] max-w-none" src={imgOrange11} />
+      </div>
+    </div>
+  );
 }
 
 function Fix() {
@@ -123,7 +141,7 @@ function Ul({ onCalendarClick, onWriteClick, onHomeClick, onProfileClick }: { on
           </div>
         </div>
       </button>
-      <div className="content-stretch flex flex-col items-start relative shrink-0 size-[50px]" data-name="Component 12">
+      <div className="content-stretch flex flex-col items-start relative shrink-0 size-[50px] opacity-40 pointer-events-none" data-name="Component 12">
         <div className="flex-[1_0_0] min-h-px relative w-full" data-name="shop">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img alt="" className="absolute h-[196.92%] left-[-77.67%] max-w-none top-[-41.73%] w-[256%]" src={imgShop} />
@@ -141,20 +159,16 @@ function Ul({ onCalendarClick, onWriteClick, onHomeClick, onProfileClick }: { on
   );
 }
 
-export function FarmContent({ onBack, onCalendarClick, onWriteClick, onHomeClick, onProfileClick }: FarmContentProps) {
+export function FarmContent({ memoCount, onBack, onCalendarClick, onWriteClick, onHomeClick, onProfileClick }: FarmContentProps) {
   return (
     <div className="bg-[#fff7ef] content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative rounded-[49px] size-full" data-name="farm">
       <FixBar />
       <TopbtnBox onBack={onBack} />
       <TreeBackground />
       <Ul onCalendarClick={onCalendarClick} onWriteClick={onWriteClick} onHomeClick={onHomeClick} onProfileClick={onProfileClick} />
-      <div className="absolute content-stretch flex flex-col h-[27px] items-start left-[131px] top-[320px] w-[29px]" data-name="oranges">
-        <div className="flex-[1_0_0] min-h-px relative w-full" data-name="orange1 1">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[400%] left-[-137.74%] max-w-none top-[-151%] w-[377.36%]" src={imgOrange11} />
-          </div>
-        </div>
-      </div>
+      {ORANGE_POSITIONS.slice(0, memoCount).map(([left, top], index) => (
+        <FarmOrange key={index} left={left} top={top} />
+      ))}
     </div>
   );
 }

@@ -48,8 +48,7 @@ function Top() {
 
 function InputWrapYearly({ isSelected, onClick }: { isSelected: boolean; onClick: () => void }) {
   return (
-    <button onClick={onClick} className="bg-white h-[85px] relative rounded-[16px] shrink-0 w-full" data-name="input_wrap">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px]" />
+    <button onClick={onClick} className="bg-white h-[85px] relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="input_wrap">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between p-[20px] relative size-full">
           <div className="content-stretch flex gap-[14px] items-center relative shrink-0">
@@ -75,8 +74,7 @@ function InputWrapYearly({ isSelected, onClick }: { isSelected: boolean; onClick
 
 function InputWrapMonthly({ isSelected, onClick }: { isSelected: boolean; onClick: () => void }) {
   return (
-    <button onClick={onClick} className="bg-white h-[85px] relative rounded-[16px] shrink-0 w-full" data-name="input_wrap">
-      <div aria-hidden="true" className="absolute border border-[#1e293b] border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px]" />
+    <button onClick={onClick} className="bg-white h-[85px] relative rounded-[4px] shrink-0 w-full border-2 border-[#1e293b] shadow-[4px_4px_0_#1e293b]" data-name="input_wrap">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between p-[20px] relative size-full">
           <div className="content-stretch flex gap-[14px] items-center relative shrink-0">
@@ -119,11 +117,14 @@ function Li({ selectedPlan, onSelectPlan }: { selectedPlan: 'yearly' | 'monthly'
 
 function Button({ onClick }: { onClick: () => void }) {
   return (
-    <button onClick={onClick} className="bg-[#f65f1e] h-[42px] relative rounded-[16px] shrink-0 w-full" data-name="button">
-      <div aria-hidden="true" className="absolute border border-black border-solid inset-[-0.5px] pointer-events-none rounded-[16.5px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)]" />
+    <button
+      onClick={onClick}
+      className="bg-[#E9642C] h-[42px] relative rounded-full shrink-0 w-full border-[2.5px] border-[#B14A1E] shadow-[4px_4px_0px_0px_#B14A1E] active:shadow-[2px_2px_0px_0px_#B14A1E] active:translate-x-[2px] active:translate-y-[2px] transition-all duration-100"
+      data-name="button"
+    >
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center px-[20px] py-[10px] relative size-full">
-          <p className="font-['Noto_Sans_KR:Regular',sans-serif] font-normal leading-none relative shrink-0 text-[16px] text-white whitespace-nowrap">무료체험 시작하기</p>
+          <p className="font-['Noto_Sans_KR:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[16px] text-[#FFF7EE] whitespace-nowrap">무료체험 시작하기</p>
         </div>
       </div>
     </button>

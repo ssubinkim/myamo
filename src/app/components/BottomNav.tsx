@@ -45,8 +45,8 @@ export function BottomNav({ currentView, onNavigate }: BottomNavProps) {
             </div>
           </button>
           <button
-            onClick={() => onNavigate('shop')}
-            className="content-stretch flex flex-col items-start relative shrink-0 size-[50px]"
+            disabled
+            className="content-stretch flex flex-col items-start relative shrink-0 size-[50px] opacity-40 pointer-events-none"
           >
             <div className="flex-[1_0_0] min-h-px relative w-full">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -55,8 +55,8 @@ export function BottomNav({ currentView, onNavigate }: BottomNavProps) {
             </div>
           </button>
           <button
-            onClick={() => onNavigate('diary')}
-            className="content-stretch flex items-center relative shrink-0 size-[50px]"
+            disabled
+            className="content-stretch flex items-center relative shrink-0 size-[50px] opacity-40 pointer-events-none"
           >
             <div className="flex-[1_0_0] h-full min-w-px relative">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
